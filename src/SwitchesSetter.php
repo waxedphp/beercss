@@ -1,7 +1,7 @@
 <?php
 namespace Waxedphp\Beercss;
 
-class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
+class SwitchesSetter extends Setter {
 
   /**
    * @var array<mixed> $setup
