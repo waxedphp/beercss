@@ -3,7 +3,7 @@
     "description": "Build material design in record time without stress for devs - within WaxedPHP environment.",
     "type": "library",
     "license": "MIT",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "autoload": {
         "psr-4": {
             "Waxedphp\\Beercss\\": "src/"

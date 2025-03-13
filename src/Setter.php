@@ -35,6 +35,7 @@ class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
   */
   public function value(mixed $value = null): array {
     $a = [];
+    $a = array_merge($a, $this->setup);
     $b = $this->getArrayOfAllowedOptions();
     if (!empty($b)) {
       $a['config'] = $b;
