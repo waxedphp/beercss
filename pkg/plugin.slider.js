@@ -71,14 +71,17 @@
 
       this.init=function() {
         
+        var w = $(this.element).data(pluginName);
+        if (typeof w != 'undefined') return;
+        
         //console.log(pluginName);
         $(this.element).find('input[type=range]').each(function(i,a) {
           that.ranges.push(a);
           $(a).on('input', that.changed);
           $(a).on('mouseup', function(ev){that.mouseup(ev)});
         });
-
-
+        
+        $(this.element).data(pluginName, 'yes');
 
         inited = true;
       },

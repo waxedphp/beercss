@@ -72,12 +72,17 @@
       },
 
       this.init=function() {
-        
+
+        var w = $(this.element).data(pluginName);
+        if (typeof w != 'undefined') return;
+                
         //console.log(pluginName);
         $(this.element).find('input[type=radio]').each(function(i,a) {
           that.radios.push(a);
           $(a).on('input', that.changed);
         });
+        
+        $(this.element).data(pluginName, 'yes');
 
         inited = true;
       },

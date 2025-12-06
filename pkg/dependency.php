@@ -10,6 +10,7 @@ return [
     $PATH . '/plugin.switches.js',
     $PATH . '/plugin.tabs.js',
     $PATH . '/plugin.select.js',
+    $PATH . '/plugin.fieldset.js',
   ],
   'css' => [
     NODE . '/beercss/dist/cdn/beer.css',

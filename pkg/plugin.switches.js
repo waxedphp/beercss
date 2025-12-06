@@ -49,21 +49,28 @@
 
       },
       this.setval = function(val) {
+        val = Math.trunc(Number(val));
+        console.log('setval', that.dd.name, val);
+        console.log(that.checkboxes.length, that.buttons.length);
         if ((that.checkboxes.length<1)&&(that.buttons.length<1)) return;
         for(var i=0;i<that.checkboxes.length;i++) {
-          var v = $(that.checkboxes[i]).val();
+          var v = Math.trunc(Number($(that.checkboxes[i]).val()));
           if (val&v) {
+            console.log('check');
             $(that.checkboxes[i]).prop( "checked", true );
           } else {
             $(that.checkboxes[i]).prop( "checked", false );
+            console.log('uncheck');
           }
         };
         for(var i=0;i<that.buttons.length;i++) {
-          var v = $(that.buttons[i]).val();
+          var v = Math.trunc(Number($(that.buttons[i]).val()));
           if (val&v) {
             $(that.buttons[i]).removeClass('border');
+            console.log('check');
           } else {
             $(that.buttons[i]).addClass('border');
+            console.log('uncheck');
           }
         };
       },
@@ -87,7 +94,7 @@
           if ($(that.checkboxes[i]).is(':checked')) {
             var v = Number($(that.checkboxes[i]).val());
             //console.log(v);
-            val = val|v;
+            val = Math.trunc(val) | Math.trunc(v);
           }
         }
         for(var i=0;i<that.buttons.length;i++) {
@@ -96,7 +103,7 @@
           } else {
             var v = Number($(that.buttons[i]).val());
             //console.log(v);
-            val = val|v;
+            val = Math.trunc(val) | Math.trunc(v);
           }
         }
         
@@ -115,6 +122,14 @@
 
       this.init=function() {
         
+        var oh = $(this.element).data(pluginName);
+        if (typeof oh == 'object') {
+          console.log(oh);
+          this.checkboxes = oh.checkboxes;
+          this.buttons = oh.buttons;
+          //that = this;
+          return;
+        };
         //console.log(pluginName);
         $(this.element).find('input[type=checkbox]').each(function(i,a) {
           that.checkboxes.push(a);
@@ -124,6 +139,7 @@
           that.buttons.push(a);
           $(a).on('click', that.changed);
         });
+        $(this.element).data(pluginName, this);
 
         inited = true;
       },

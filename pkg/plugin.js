@@ -404,6 +404,7 @@ function updateTheme(source) {
         const kebabCase = key.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
         style += "--" + kebabCase + ":" + value + ";";
       }
+      
       return style;
     };
     _lastTheme.light = toCss(theme.light);
@@ -645,6 +646,7 @@ function updateAllDataUis() {
   }
 }
 function _ui(selector, options) {
+  console.log('UI', selector, options);
   if (selector) {
     if (selector === "setup") {
       setup();
@@ -684,7 +686,7 @@ export {
   ui
 };
 */
-
+window.ui = ui;
 
 
 
@@ -700,7 +702,7 @@ export {
       };
 
       this.invalidate = function(RECORD){
-
+        
       },
 
       this.setRecord = function(RECORD){
@@ -708,6 +710,7 @@ export {
         var rec = that.pluggable.getvar(that.dd.name, RECORD);
         if (typeof rec != 'object') { return; };
         if (typeof rec.theme == 'string') { 
+          console.log(rec.theme);
           ui("theme", rec.theme);
         };
         if (typeof rec.mode == 'string') { 
@@ -724,10 +727,15 @@ export {
       },
 
       this.init=function() {
+        
+        var w = $(this.element).data(pluginName);
+        if (typeof w != 'undefined') return;
 
         //console.log('BEEEER');
         //ui("theme", '#00ff00');
         //setTimeout(function(){ui("mode", 'light');},1000);
+        
+        $(this.element).data(pluginName, 'yes');
 
         inited = true;
       },

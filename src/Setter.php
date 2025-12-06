@@ -15,6 +15,7 @@ class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
    * @var array<mixed> $_allowedOptions
    */
   protected array $_allowedOptions = [
+    'mode', 'theme'
   ];
 
   function setMode($mode) {
