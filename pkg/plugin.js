@@ -710,11 +710,12 @@ window.ui = ui;
         var rec = that.pluggable.getvar(that.dd.name, RECORD);
         if (typeof rec != 'object') { return; };
         if (typeof rec.theme == 'string') { 
-          console.log(rec.theme);
+          //console.log(rec.theme);
           ui("theme", rec.theme);
         };
         if (typeof rec.mode == 'string') { 
           setTimeout(function(){
+            //console.log('setting mode');
             ui("mode", rec.mode);
           },100);
         };

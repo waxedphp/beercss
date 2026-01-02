@@ -11,6 +11,7 @@ return [
     $PATH . '/plugin.tabs.js',
     $PATH . '/plugin.select.js',
     $PATH . '/plugin.fieldset.js',
+    $PATH . '/plugin.dialog.js',
   ],
   'css' => [
     NODE . '/beercss/dist/cdn/beer.css',
