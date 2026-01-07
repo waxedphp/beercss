@@ -10,4 +10,5 @@ import "./plugin.switches.js";
 import "./plugin.tabs.js";
 import "./plugin.select.js";
 import "./plugin.fieldset.js";
+import "./plugin.dialog.js";
 import "./style.css";

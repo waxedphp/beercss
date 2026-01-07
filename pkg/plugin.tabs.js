@@ -49,6 +49,7 @@
 
       },
       this.setval = function(val) {
+        console.log('TABS',val);
         var p = Number(val);
         for(var i=0;i<that.pages.length;i++) {
           if (i==p) {
@@ -97,6 +98,11 @@
           that.pages.push(a);
         });
         $(this.element).find('div.tabs a').each(function(i,a) {
+          $(a).data('page',i);
+          that.tabs.push(a);
+          $(a).on('click', that.changed);
+        });
+        $(this.element).find('nav.tabbed a').each(function(i,a) {
           $(a).data('page',i);
           that.tabs.push(a);
           $(a).on('click', that.changed);

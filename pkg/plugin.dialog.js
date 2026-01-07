@@ -22,6 +22,7 @@
       };
       this.ranges = [];
       this.values = [];
+      this.overlayElement = null;
 
       this.invalidate = function(RECORD) {
       },
@@ -64,6 +65,9 @@
           $(that.element).removeClass('active').removeClass('max')
           .removeClass('left').removeClass('right').removeClass('top').removeClass('bottom')
           .removeClass('blur').removeClass('overlay');
+          if (that.overlayElement) {
+            $(that.overlayElement).removeClass('active');
+          };
         }
       },
 
@@ -71,6 +75,9 @@
         //console.log('OPEN DIALOG', cmd);
         var a = cmd.mod.split(' ');
         for (var i=0;i<a.length;i++) {
+          if (a[i] == 'modal') {
+            $(that.overlayElement).addClass('active');
+          }
           $(that.element).addClass(a[i]);
         };
       },
@@ -88,9 +95,13 @@
       },
 
       this.init=function() {
-        
-
-
+        var a = $(that.element).data('overlay');
+        if (typeof a == 'string') that.overlayElement = $('#'+a);
+        if (!that.overlayElement) {
+          that.overlayElement = $('<div class="overlay blur" ></div>');
+          $(that.overlayElement).insertBefore(that.element);
+          $(that.element).data('overlay', that.pluggable.getDomId(that.overlayElement));
+        };
         inited = true;
       },
       this._init_();
