@@ -24,7 +24,7 @@
       this.values = [];
 
       this.invalidate = function(RECORD) {
-        console.log('INVALIDATE FIELDSET', RECORD);
+        //console.log('INVALIDATE FIELDSET', RECORD);
         $(that.element).find('input').each(function(i, e){
           that._resetInvalidationInput(e);
         });

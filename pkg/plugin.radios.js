@@ -59,7 +59,7 @@
       this.changed = function(ev) {
         //console.log(ev);
         that.value = $(ev.currentTarget).val();
-        console.log(that.value);
+        //console.log(that.value);
 
         if ((typeof that.dd.url == 'string')&&(typeof that.dd.action == 'string')) {
           var o = {

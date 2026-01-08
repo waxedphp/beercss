@@ -646,7 +646,7 @@ function updateAllDataUis() {
   }
 }
 function _ui(selector, options) {
-  console.log('UI', selector, options);
+  //console.log('UI', selector, options);
   if (selector) {
     if (selector === "setup") {
       setup();

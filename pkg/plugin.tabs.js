@@ -49,7 +49,7 @@
 
       },
       this.setval = function(val) {
-        console.log('TABS',val);
+        //console.log('TABS',val);
         var p = Number(val);
         for(var i=0;i<that.pages.length;i++) {
           if (i==p) {

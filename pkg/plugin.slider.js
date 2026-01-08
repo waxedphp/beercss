@@ -59,7 +59,7 @@
       },
 
       this.mouseup = function(ev) {
-        console.log(this.values);
+        //console.log(this.values);
         if ((typeof that.dd.url == 'string')&&(typeof that.dd.action == 'string')) {
           var o = {
             'action' : that.dd.action

@@ -89,7 +89,7 @@
         };
 
         $(this.element).on('change', function() {
-          console.log( this.value );
+          //console.log( this.value );
           that.sendData(this.value);
         });
         

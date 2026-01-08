@@ -50,27 +50,27 @@
       },
       this.setval = function(val) {
         val = Math.trunc(Number(val));
-        console.log('setval', that.dd.name, val);
-        console.log(that.checkboxes.length, that.buttons.length);
+        //console.log('setval', that.dd.name, val);
+        //console.log(that.checkboxes.length, that.buttons.length);
         if ((that.checkboxes.length<1)&&(that.buttons.length<1)) return;
         for(var i=0;i<that.checkboxes.length;i++) {
           var v = Math.trunc(Number($(that.checkboxes[i]).val()));
           if (val&v) {
-            console.log('check');
+            //console.log('check');
             $(that.checkboxes[i]).prop( "checked", true );
           } else {
             $(that.checkboxes[i]).prop( "checked", false );
-            console.log('uncheck');
+            //console.log('uncheck');
           }
         };
         for(var i=0;i<that.buttons.length;i++) {
           var v = Math.trunc(Number($(that.buttons[i]).val()));
           if (val&v) {
             $(that.buttons[i]).removeClass('border');
-            console.log('check');
+            //console.log('check');
           } else {
             $(that.buttons[i]).addClass('border');
-            console.log('uncheck');
+            //console.log('uncheck');
           }
         };
       },
@@ -108,7 +108,7 @@
         }
         
         that.value = val;
-        console.log(that.value);
+        //console.log(that.value);
 
         if ((typeof that.dd.url == 'string')&&(typeof that.dd.action == 'string')) {
           var o = {
@@ -124,7 +124,7 @@
         
         var oh = $(this.element).data(pluginName);
         if (typeof oh == 'object') {
-          console.log(oh);
+          //console.log(oh);
           this.checkboxes = oh.checkboxes;
           this.buttons = oh.buttons;
           //that = this;
