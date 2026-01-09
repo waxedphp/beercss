@@ -3,7 +3,7 @@
 
 }
 
-  @media (max-width: 600px) {
+  @media (max-width: 601px) {
       .s0 {
           display: none;
       }
@@ -15,7 +15,7 @@
       }
   }
 
-  @media (min-width: 993px) {
+  @media (min-width: 992px) {
       .l0 {
           display: none;
       }

@@ -2,7 +2,7 @@
 
 return [
   'js' => [
-    //NODE . '/beercss/dist/cdn/beer.min.js',
+    //NODE . '/beercss/dist/cdn/beer.js',
     //NODE . '/material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js',
     $PATH . '/plugin.js',
     $PATH . '/plugin.slider.js',
