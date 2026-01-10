@@ -711,15 +711,15 @@ window.ui = ui;
         if (typeof rec != 'object') { return; };
         if (typeof rec.theme == 'string') { 
           setTimeout(function(){
-            console.log('THEME', rec.theme);
+            //console.log('THEME', rec.theme);
             ui("theme", rec.theme);
-          },100);
+          },1);
         };
         if (typeof rec.mode == 'string') { 
           setTimeout(function(){
             //console.log('setting mode');
             ui("mode", rec.mode);
-          },100);
+          },1);
         };
 
       },
