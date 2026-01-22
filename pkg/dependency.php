@@ -10,6 +10,8 @@ return [
     $PATH . '/plugin.switches.js',
     $PATH . '/plugin.tabs.js',
     $PATH . '/plugin.select.js',
+    $PATH . '/plugin.pagination.js',
+    $PATH . '/plugin.rating.js',
     $PATH . '/plugin.fieldset.js',
     $PATH . '/plugin.dialog.js',
   ],

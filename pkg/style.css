@@ -3,6 +3,12 @@
 
 }
 
+  .waxed-beer-rating div.rating i,
+  .waxed-beer-rating div.reviews
+   {
+    cursor:pointer;
+  }
+
   @media (max-width: 601px) {
       .s0 {
           display: none;
