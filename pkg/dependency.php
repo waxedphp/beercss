@@ -14,6 +14,7 @@ return [
     $PATH . '/plugin.rating.js',
     $PATH . '/plugin.fieldset.js',
     $PATH . '/plugin.dialog.js',
+    $PATH . '/plugin.expansion.js',
   ],
   'css' => [
     NODE . '/beercss/dist/cdn/beer.css',

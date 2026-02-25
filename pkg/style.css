@@ -26,3 +26,9 @@
           display: none;
       }
   }
+
+ .waxed-more-label {display:inline;}
+ .waxed-less-label {display:none;}
+
+details[open] .waxed-more-label {display:none;}
+details[open] .waxed-less-label {display:inline;}
