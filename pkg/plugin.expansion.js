@@ -62,17 +62,52 @@
 
       this.init=function() {
 
-        $(that.element).find('p').each(function(i,a){
-          if (i==0) {
-            this.moreLabel = $('<span class="waxed-more-label" >▼ </span>').prependTo(a);
-            this.lessLabel = $('<span class="waxed-less-label" >▲ </span>').prependTo(a);
+        that.threshold = 1;
+        if (typeof that.dd.cnt == 'number') {
+          that.threshold = that.dd.cnt;
+        }
 
-            $(a).wrap('<summary></summary>');
-          };
-          //console.log(i,a);
-        });
-        $(that.element).wrapInner('<details></details>');
+        //console.log('EXPANSION!');
+        if (typeof that.dd.img == 'number') {
+          var imb = $(that.element).closest('.waxed-beer-expansion-box');
+          var ime = $(imb).find('.waxed-beer-expansion-img')[0];
+          console.log(ime);
 
+          var im = $(that.element).find('img');
+          $(im).each(function(i,a){
+            var p = $(a).parent();
+            $(a).detach().appendTo(ime).addClass('responsive');
+            if ($(p).is(':empty')) {
+              $(p).detach();
+            }
+          });
+        };
+
+        var ee = $(that.element).find('h1, h2, h3, h4, p');
+        var len = ee.length;
+        if (len>that.threshold) {
+
+          var sum = $('<summary></summary>').prependTo(that.element);
+
+          $(ee).each(function(i,a){
+            //console.log(ee);
+            if (i==(that.threshold-1)) {
+              this.moreLabel = $('<span class="waxed-more-label" > ▼ </span>').appendTo(a);
+              this.lessLabel = $('<span class="waxed-less-label" > ▲ </span>').appendTo(a);
+            };
+            if (i==(len-1)) {
+              //this.lessLabel2 = $('<span class="waxed-less-label" > ▲ </span>').appendTo(a);
+            };
+            if (i<that.threshold) {
+              $(a).detach().appendTo(sum);
+            };
+
+
+            //console.log(i,a);
+          });
+          $(that.element).wrapInner('<details></details>');
+
+        };
 
 
         inited = true;
