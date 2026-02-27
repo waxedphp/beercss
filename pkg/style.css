@@ -32,3 +32,16 @@
 
 details[open] .waxed-more-label {display:none;}
 details[open] .waxed-less-label {display:inline;}
+
+
+.waxed-beer-expansion-img.waxed-vcenter {
+    position: relative;
+    overflow:hidden;
+    height:100%;
+}
+
+.waxed-beer-expansion-img.waxed-vcenter img{
+    position: absolute;
+    top:-100%; left:0; right: 0; bottom:-100%;
+    margin: auto;
+}

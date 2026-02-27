@@ -83,6 +83,28 @@
           });
         };
 
+        if (typeof that.dd.tag == 'number') {
+          var imb = $(that.element).closest('.waxed-beer-expansion-box');
+          var ime = $(imb).find('.waxed-beer-expansion-tag')[0];
+          console.log(ime);
+
+          var ul = $(that.element).find('ul');
+          ul = ul[ul.length-1];
+
+          var li = $(ul).find('li');
+          var s = '';
+          $(li).each(function(i,a){
+            s = s+$(a).text()+' ';
+            var span = $('<span>').appendTo(ime);
+            $(span).text($(a).text());
+            $(a).detach();
+
+          });
+          $(ul).detach();
+          $(imb).data('cat', s);
+          //$(ime).text(s);
+        };
+
         var ee = $(that.element).find('h1, h2, h3, h4, p');
         var len = ee.length;
         if (len>that.threshold) {
