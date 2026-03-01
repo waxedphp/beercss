@@ -13,4 +13,5 @@ import "./plugin.fieldset.js";
 import "./plugin.pagination.js";
 import "./plugin.rating.js";
 import "./plugin.dialog.js";
+import "./plugin.expansion.js";
 import "./style.css";
